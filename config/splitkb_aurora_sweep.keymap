@@ -36,6 +36,8 @@
 #define HMRCTLCOM &hm RCTRL COMMA
 #define HMRALTDOT &hm RALT DOT
 #define HMRGUISLH &hm RGUI FSLH
+#define DESKLEFT  &kp LC(RG(LEFT))
+#define DESKRIGHT &kp LC(RG(RIGHT))
 
     keymap {
         compatible = "zmk,keymap";
@@ -69,9 +71,9 @@
 
         nav_layer {
             bindings = <
-                &trans    WORDLEFT  &kp UP    WORDRIGHT &trans      &trans    &kp INS   &kp HOME  &kp PG_UP &trans
+                &trans    &trans    &kp UP    &trans    &trans      &trans    &kp INS   &kp HOME  &kp PG_UP &trans
                 &trans    &kp LEFT  &kp DOWN  &kp RIGHT &trans      &trans    &kp DEL   &kp END   &kp PG_DN &trans
-                &trans    &trans    &trans    &kp K_APP &trans      &trans    &trans    &trans    &trans    &trans
+                &trans    DESKLEFT  &trans    DESKRIGHT &trans      &trans    &trans    &trans    &trans    &trans
                                               &trans    &trans      &trans    &trans
                         >;
                 };
