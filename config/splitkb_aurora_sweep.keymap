@@ -36,6 +36,7 @@
 #define HMRCTLCOM &hm RCTRL COMMA
 #define HMRALTDOT &hm RALT DOT
 #define HMRGUISLH &hm RGUI FSLH
+#define STARSBL   &kp KP_MULTIPLY
 #define DESKLEFT  &kp LC(RG(LEFT))
 #define DESKRIGHT &kp LC(RG(RIGHT))
 #define BTCLR     &bt BT_CLR
@@ -71,7 +72,7 @@
                 &kp F1    &kp F2    &kp F3    &kp F4    &kp F5      &kp F6    &kp F7    &kp F8    &kp F9    &kp F10
                 &kp F11   &kp F12   &trans    &trans    &trans      &trans    &trans    &trans    &trans    &trans
                 BTSEL0    BTSEL1    BTSEL2    BTSEL3    BTSEL4      BTCLR     &trans    &trans    &trans    &trans
-                                              &mo MED   &trans      &trans    &trans
+                                              &trans    &trans      &trans    &trans
             >;
         };
 
