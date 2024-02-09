@@ -11,7 +11,7 @@
 #define DEF 0
 #define NUM 1
 #define FUN 2
-#define NAV 4
+#define NAV 3
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
@@ -38,6 +38,12 @@
 #define HMRGUISLH &hm RGUI FSLH
 #define DESKLEFT  &kp LC(RG(LEFT))
 #define DESKRIGHT &kp LC(RG(RIGHT))
+#define BTCLR     &bt BT_CLR
+#define BTSEL0    &bt BT_SEL 0
+#define BTSEL1    &bt BT_SEL 1
+#define BTSEL2    &bt BT_SEL 2
+#define BTSEL3    &bt BT_SEL 3
+#define BTSEL4    &bt BT_SEL 4
 
     keymap {
         compatible = "zmk,keymap";
@@ -64,7 +70,7 @@
             bindings = <
                 &kp F1    &kp F2    &kp F3    &kp F4    &kp F5      &kp F6    &kp F7    &kp F8    &kp F9    &kp F10
                 &kp F11   &kp F12   &trans    &trans    &trans      &trans    &trans    &trans    &trans    &trans
-                BTSEL0    BTSEL1    BTSEL2    BTSEL3    BTSEL4      BTCLR    &trans    &trans    &trans    &trans
+                BTSEL0    BTSEL1    BTSEL2    BTSEL3    BTSEL4      BTCLR     &trans    &trans    &trans    &trans
                                               &mo MED   &trans      &trans    &trans
             >;
         };
