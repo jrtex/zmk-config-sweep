@@ -11,7 +11,7 @@
 #define DEF 0
 #define NUM 1
 #define FUN 2
-#define SYM_L 4
+#define NAV 4
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
@@ -45,7 +45,7 @@
                 &kp Q     &kp W     &kp F     &kp P     &kp B       &kp J     &kp L     &kp U     &kp Y     &kp SEMI
                 &kp A     &kp R     &kp S     &kp T     &kp G       &kp M     &kp N     &kp E     &kp I     &kp O
                 HMLGUIZ   HMLALTX   HMLCTLC   HMLSFTD   &kp V       &kp K     HMRSFTH   HMRCTLCOM HMRALTDOT HMRGUISLH
-                                              &lt NUM TAB &kp SPACE   &kp RETURN &lt FUN ESC
+                                              &lt NUM TAB &lt NAV SPACE   &kp RETURN &lt FUN ESC
             >;
         };
 
@@ -66,5 +66,14 @@
                                               &mo MED   &trans      &trans    &trans
             >;
         };
+
+        nav_layer {
+            bindings = <
+                &trans    WORDLEFT  &kp UP    WORDRIGHT &trans      &trans    &kp INS   &kp HOME  &kp PG_UP &trans
+                &trans    &kp LEFT  &kp DOWN  &kp RIGHT &trans      &trans    &kp DEL   &kp END   &kp PG_DN &trans
+                &trans    &trans    &trans    &kp K_APP &trans      &trans    &trans    &trans    &trans    &trans
+                                              &trans    &trans      &trans    &trans
+                        >;
+                };
     };
 };
