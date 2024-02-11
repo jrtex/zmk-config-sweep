@@ -14,6 +14,7 @@
 #define NUM 1
 #define FUN 2
 #define NAV 3
+#define MED 4
 
 
 // Two-hand combos:
@@ -36,7 +37,7 @@ ZMK_COMBO(combo_undo,   &kp LC(Z), LB4 LB3, ALL, 20) // Z X
 ZMK_COMBO(combo_copy,   &kp LC(C), LB3 LB2, ALL, 20) // X C
 ZMK_COMBO(combo_paste,  &kp LC(V), LB2 LB1, ALL, 20) // C D
 ZMK_COMBO(combo_cut,    &kp LC(X), LB3 LB2 LB1, ALL, 20) // X C D
-// ZMK_COMBO(combo_selln,  &select_line, LB1 LB0, ALL, 20) // D V
+// ZMK_COMBO(combo_selln,  &select_line, LB1 LB0, ALL, 20) // D V/*  */
 
 // Right-hand combos:
 ZMK_COMBO(combo_tilde,  &kp TILDE, RT0 RT1, ALL, 20) // J L
@@ -59,6 +60,8 @@ ZMK_COMBO(combo_bslsh,  &kp BSLH,  RT2 RM3, ALL, 20) // U I
 ZMK_COMBO(combo_lbkt,   &kp LBKT,  RB1 RM2, ALL, 20) // H E
 ZMK_COMBO(combo_rbkt,   &kp RBKT,  RM2 RB3, ALL, 20) // E >
 
+// Conditional Layers
+ZMK_CONDITIONAL_LAYER(NUM FUN, MED)
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
@@ -110,6 +113,7 @@ ZMK_COMBO(combo_rbkt,   &kp RBKT,  RM2 RB3, ALL, 20) // E >
 #define STARSBL   &kp KP_MULTIPLY
 #define DESKLEFT  &kp LC(RG(LEFT))
 #define DESKRIGHT &kp LC(RG(RIGHT))
+#define TASKVIEW  &kp LG(TAB)
 #define BTCLR     &bt BT_CLR
 #define BTSEL0    &bt BT_SEL 0
 #define BTSEL1    &bt BT_SEL 1
@@ -151,7 +155,16 @@ ZMK_COMBO(combo_rbkt,   &kp RBKT,  RM2 RB3, ALL, 20) // E >
             bindings = <
                 &trans    &trans    &kp UP    &trans    &trans      &trans    &kp INS   &kp HOME  &kp PG_UP &trans
                 &trans    &kp LEFT  &kp DOWN  &kp RIGHT &trans      &trans    &kp DEL   &kp END   &kp PG_DN &trans
-                &trans    DESKLEFT  &trans    DESKRIGHT &trans      &trans    &trans    &trans    &trans    &trans
+                &trans    DESKLEFT  TASKVIEW  DESKRIGHT &trans      &trans    &trans    &trans    &trans    &trans
+                                              &trans    &trans      &trans    &trans
+                        >;
+                };
+
+        media_layer {
+            bindings = <
+                &trans    &trans    &trans    &trans    &trans      &trans    &trans    &trans    &trans    &trans
+                &trans    &trans    &trans    &trans    &trans      &trans    PREVIOUS  &kp C_PP  NEXT      &trans
+                &trans    &trans    &trans    &trans    &trans      &trans    VOLUMDN   &trans    VOLUMUP   &trans
                                               &trans    &trans      &trans    &trans
                         >;
                 };
