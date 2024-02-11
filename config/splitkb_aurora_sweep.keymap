@@ -72,6 +72,27 @@ ZMK_COMBO(combo_rbkt,   &kp RBKT,  RM2 RB3, ALL, 20) // E >
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+
+        lt_rpi: layertap_requireprioridle {
+            compatible = "zmk,behavior-hold-tap";
+            label = "RPI LAYER TAP";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            require-prior-idle-ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&kp>;
+                };
+
+        lt_hp: layertap_holdpreferred {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HP LAYER TAP";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "hold-preferred";
+            bindings = <&mo>, <&kp>;
+                };
     };
 
 // Max 9 characters per key
@@ -83,6 +104,9 @@ ZMK_COMBO(combo_rbkt,   &kp RBKT,  RM2 RB3, ALL, 20) // E >
 #define HMRCTLCOM &hm RCTRL COMMA
 #define HMRALTDOT &hm RALT DOT
 #define HMRGUISLH &hm RGUI FSLH
+#define LTNAVSPAC &lt_rpi NAV SPACE
+#define LTNUMTAB  &lt_hp NUM TAB
+#define LTFUNESC  &lt_hp FUN ESC
 #define STARSBL   &kp KP_MULTIPLY
 #define DESKLEFT  &kp LC(RG(LEFT))
 #define DESKRIGHT &kp LC(RG(RIGHT))
@@ -101,7 +125,7 @@ ZMK_COMBO(combo_rbkt,   &kp RBKT,  RM2 RB3, ALL, 20) // E >
                 &kp Q     &kp W     &kp F     &kp P     &kp B       &kp J     &kp L     &kp U     &kp Y     &kp SEMI
                 &kp A     &kp R     &kp S     &kp T     &kp G       &kp M     &kp N     &kp E     &kp I     &kp O
                 HMLGUIZ   HMLALTX   HMLCTLC   HMLSFTD   &kp V       &kp K     HMRSFTH   HMRCTLCOM HMRALTDOT HMRGUISLH
-                                              &lt NUM TAB &lt NAV SPACE   &kp RETURN &lt FUN ESC
+                                              LTNUMTAB  LTNAVSPAC   &kp RETURN LTFUNESC
             >;
         };
 
