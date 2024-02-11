@@ -120,13 +120,17 @@ ZMK_CONDITIONAL_LAYER(NUM FUN, MED)
 #define BTSEL2    &bt BT_SEL 2
 #define BTSEL3    &bt BT_SEL 3
 #define BTSEL4    &bt BT_SEL 4
+#define VOLUMUP   &kp C_VOL_UP
+#define VOLUMDN   &kp C_VOL_DN
+#define PREVIOUS  &kp C_PREV
+#define NEXT      &kp C_NEXT
 
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-                &kp Q     &kp W     &kp F     &kp P     &kp B       &kp J     &kp L     &kp U     &kp Y     &kp SEMI
+                &kp Q     &kp W     &kp F     &kp P     &kp B       &kp J     &kp L     &kp U     &kp Y     &kp BSPC
                 &kp A     &kp R     &kp S     &kp T     &kp G       &kp M     &kp N     &kp E     &kp I     &kp O
                 HMLGUIZ   HMLALTX   HMLCTLC   HMLSFTD   &kp V       &kp K     HMRSFTH   HMRCTLCOM HMRALTDOT HMRGUISLH
                                               LTNUMTAB  LTNAVSPAC   &kp RETURN LTFUNESC
