@@ -72,40 +72,34 @@ ZMK_BEHAVIOR(del_line, macro,
         , <&macro_tap &kp BSPC>;
 )
 
+// Hold-tap behaviors
+ZMK_BEHAVIOR(hm, hold_tap,
+    tapping_term_ms = <200>;
+    flavor = "tap-preferred";
+    bindings = <&kp>, <&kp>;
+)
+ZMK_BEHAVIOR(lt_hp, hold_tap,
+    tapping-term-ms = <200>;
+    quick-tap-ms = <0>;
+    flavor = "hold-preferred";
+    bindings = <&mo>, <&kp>;
+)
+ZMK_BEHAVIOR(lt_rpi, hold_tap,
+    tapping-term-ms = <200>;
+    quick-tap-ms = <0>;
+    require-prior-idle-ms = <200>;
+    flavor = "tap-preferred";
+    bindings = <&mo>, <&kp>;
+)
+ZMK_BEHAVIOR(ltst_hp, hold_tap,
+    tapping-term-ms = <200>;
+    quick-tap-ms = <0>;
+    flavor = "hold-preferred";
+    bindings = <&mo>, <&sk>;
+)
+
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
-
-/ {
-    behaviors {
-        hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping_term_ms = <200>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-
-        lt_rpi: layertap_requireprioridle {
-            compatible = "zmk,behavior-hold-tap";
-            label = "RPI LAYER TAP";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            require-prior-idle-ms = <200>;
-            flavor = "tap-preferred";
-            bindings = <&mo>, <&kp>;
-                };
-
-        lt_hp: layertap_holdpreferred {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HP LAYER TAP";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            flavor = "hold-preferred";
-            bindings = <&mo>, <&kp>;
-                };
-    };
 
 // Max 9 characters per key
 #define HMLGUIZ   &hm LGUI Z
@@ -118,7 +112,7 @@ ZMK_BEHAVIOR(del_line, macro,
 #define HMRGUISLH &hm RGUI FSLH
 #define LTNAVSPAC &lt_rpi NAV SPACE
 #define LTNUMTAB  &lt_hp NUM TAB
-#define LTFUNESC  &lt_hp FUN ESC
+#define LTFUNSTS  &ltst_hp FUN LSHIFT
 #define STARSBL   &kp KP_MULTIPLY
 #define DESKLEFT  &kp LC(RG(LEFT))
 #define DESKRIGHT &kp LC(RG(RIGHT))
@@ -142,7 +136,7 @@ ZMK_BEHAVIOR(del_line, macro,
                 &kp Q     &kp W     &kp F     &kp P     &kp B       &kp J     &kp L     &kp U     &kp Y     &kp BSPC
                 &kp A     &kp R     &kp S     &kp T     &kp G       &kp M     &kp N     &kp E     &kp I     &kp O
                 HMLGUIZ   HMLALTX   HMLCTLC   HMLSFTD   &kp V       &kp K     HMRSFTH   HMRCTLCOM HMRALTDOT HMRGUISLH
-                                              LTNUMTAB  LTNAVSPAC   &kp RETURN LTFUNESC
+                                              LTNUMTAB  LTNAVSPAC   &kp RETURN LTFUNSTS
             >;
         };
 
