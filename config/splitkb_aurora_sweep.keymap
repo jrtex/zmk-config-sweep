@@ -67,7 +67,7 @@ ZMK_CONDITIONAL_LAYER(NUM FUN, MED)
 ZMK_BEHAVIOR(del_line, macro,
     bindings = <&macro_tap &kp END>
         , <&macro_tap &kp LS(HOME)>
-        , <&macro_tap &kp LS(HOME)>nn
+        , <&macro_tap &kp LS(HOME)>
         , <&macro_tap &kp BSPC>
         , <&macro_tap &kp BSPC>;
 )
