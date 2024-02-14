@@ -128,52 +128,34 @@ ZMK_BEHAVIOR(ltst_hp, hold_tap,
 #define PREVIOUS  &kp C_PREV
 #define NEXT      &kp C_NEXT
 
-    keymap {
-        compatible = "zmk,keymap";
-
-        default_layer {
-            bindings = <
+// Keymap layers:
+ZMK_LAYER(default_layer,
                 &kp Q     &kp W     &kp F     &kp P     &kp B       &kp J     &kp L     &kp U     &kp Y     &kp BSPC
                 &kp A     &kp R     &kp S     &kp T     &kp G       &kp M     &kp N     &kp E     &kp I     &kp O
                 HMLGUIZ   HMLALTX   HMLCTLC   HMLSFTD   &kp V       &kp K     HMRSFTH   HMRCTLCOM HMRALTDOT HMRGUISLH
                                               LTNUMTAB  LTNAVSPAC   &kp RETURN LTFUNSTS
-            >;
-        };
-
-        num_layer {
-            bindings = <
+)
+ZMK_LAYER(num_layer,
                 &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT   &kp CARET &kp AMPS  STARSBL   &kp LPAR  &kp RPAR
                 &kp N1    &kp N2    &kp N3    &kp N4    &kp N5      &kp N6    &kp N7    &kp N8    &kp N9    &kp N0
                 &trans    &trans    &trans    &kp N5    &kp PRCNT   &trans    &trans    &trans    &trans    &trans
                                               &trans    &trans      &trans    &trans
-            >;
-        };
-
-        fun_layer {
-            bindings = <
+)
+ZMK_LAYER(fun_layer,
                 &kp F1    &kp F2    &kp F3    &kp F4    &kp F5      &kp F6    &kp F7    &kp F8    &kp F9    &kp F10
                 &kp F11   &kp F12   &trans    &trans    &trans      &trans    &trans    &trans    &trans    &trans
                 BTSEL0    BTSEL1    BTSEL2    BTSEL3    BTSEL4      BTCLR     &trans    &trans    &trans    &trans
                                               &trans    &trans      &trans    &trans
-            >;
-        };
-
-        nav_layer {
-            bindings = <
+)
+ZMK_LAYER(nav_layer,
                 &trans    &trans    &kp UP    &trans    &trans      &trans    &kp INS   &kp HOME  &kp PG_UP &trans
                 &trans    &kp LEFT  &kp DOWN  &kp RIGHT &trans      &trans    &kp DEL   &kp END   &kp PG_DN &trans
                 &trans    DESKLEFT  TASKVIEW  DESKRIGHT &trans      &trans    &trans    &trans    &trans    &trans
                                               &trans    &trans      &trans    &trans
-                        >;
-                };
-
-        media_layer {
-            bindings = <
+)
+ZMK_LAYER(media_layer,
                 &trans    &trans    &trans    &trans    &trans      &trans    &trans    &trans    &trans    &trans
                 &trans    &trans    &trans    &trans    &trans      &trans    PREVIOUS  &kp C_PP  NEXT      &trans
                 &trans    &trans    &trans    &trans    &trans      &trans    VOLUMDN   &trans    VOLUMUP   &trans
                                               &trans    &trans      &trans    &trans
-                        >;
-                };
-    };
-};
+)
