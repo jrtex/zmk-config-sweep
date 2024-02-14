@@ -30,7 +30,7 @@ ZMK_COMBO(combo_all,    &kp LC(A), LM4 LM3, ALL, 20) // A R
 ZMK_COMBO(combo_bspace, &kp BSPC,  LM3 LM2, ALL, 20) // R S
 ZMK_COMBO(combo_del,    &kp DEL,   LM2 LM1, ALL, 20) // S T
 ZMK_COMBO(combo_delw,   &kp LC(BSPC), LM3 LM2 LM1, ALL, 20) // R S T
-// ZMK_COMBO(combo_delln,  &delete_line, LM4 LM3 LM2 LM1, ALL, 20) // A R S T
+ZMK_COMBO(combo_delln,  &del_line, LM4 LM3 LM2 LM1, ALL, 20) // A R S T
 // ZMK_COMBO(combo_newln,  &mm_newline, LM1 LM0, ALL, 20) // T G
 
 ZMK_COMBO(combo_undo,   &kp LC(Z), LB4 LB3, ALL, 20) // Z X
@@ -62,6 +62,15 @@ ZMK_COMBO(combo_rbkt,   &kp RBKT,  RM2 RB3, ALL, 20) // E >
 
 // Conditional Layers
 ZMK_CONDITIONAL_LAYER(NUM FUN, MED)
+
+// Macros:
+ZMK_BEHAVIOR(del_line, macro,
+    bindings = <&macro_tap &kp END>
+        , <&macro_tap &kp LS(HOME)>
+        , <&macro_tap &kp LS(HOME)>nn
+        , <&macro_tap &kp BSPC>
+        , <&macro_tap &kp BSPC>;
+)
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
