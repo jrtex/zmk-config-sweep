@@ -37,7 +37,9 @@ ZMK_COMBO(combo_undo,   &kp LC(Z), LB4 LB3, ALL, 20) // Z X
 ZMK_COMBO(combo_copy,   &kp LC(C), LB3 LB2, ALL, 20) // X C
 ZMK_COMBO(combo_paste,  &kp LC(V), LB2 LB1, ALL, 20) // C D
 ZMK_COMBO(combo_cut,    &kp LC(X), LB3 LB2 LB1, ALL, 20) // X C D
-// ZMK_COMBO(combo_selln,  &select_line, LB1 LB0, ALL, 20) // D V/*  */
+// ZMK_COMBO(combo_selln,  &select_line, LB1 LB0, ALL, 20) // D V
+
+ZMK_COMBO(combo_kapp,  &kp K_APP, LM2 LB1, ALL, 20) // S D
 
 // Right-hand combos:
 ZMK_COMBO(combo_tilde,  &kp TILDE, RT0 RT1, ALL, 20) // J L
