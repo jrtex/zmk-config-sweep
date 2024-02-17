@@ -15,6 +15,8 @@
 #define FUN 2
 #define NAV 3
 #define MED 4
+#define KRB 5
+#define KRB2 6
 
 
 // Two-hand combos:
@@ -62,8 +64,11 @@ ZMK_COMBO(combo_bslsh,  &kp BSLH,  RT2 RM3, ALL, 20) // U I
 ZMK_COMBO(combo_lbkt,   &kp LBKT,  RB1 RM2, ALL, 20) // H E
 ZMK_COMBO(combo_rbkt,   &kp RBKT,  RM2 RB3, ALL, 20) // E >
 
+ZMK_COMBO(combo_dotdotsl, &dot_dot_slash, RB3 RB4, ALL, 20) // . /
+
 // Conditional Layers
-ZMK_CONDITIONAL_LAYER(NUM FUN, MED)
+// ZMK_CONDITIONAL_LAYER(NUM FUN, MED)
+ZMK_CONDITIONAL_LAYER(DNV KRB, KR2)
 
 // Macros:
 ZMK_BEHAVIOR(del_line, macro,
@@ -72,6 +77,13 @@ ZMK_BEHAVIOR(del_line, macro,
         , <&macro_tap &kp LS(HOME)>
         , <&macro_tap &kp BSPC>
         , <&macro_tap &kp BSPC>;
+)
+ZMK_BEHAVIOR(dot_dot_slash, macro,
+    bindings = <&macro_tap &kp END>
+        = <&macro_tap &kp DOT>
+        , <&macro_tap &kp DOT>
+        , <&macro_tap &kp FSLH>
+        ;
 )
 
 // Hold-tap behaviors
@@ -114,6 +126,7 @@ ZMK_BEHAVIOR(ltst_hp, hold_tap,
 #define HMRGUISLH &hm RGUI FSLH
 #define LTNAVSPAC &lt_rpi NAV SPACE
 #define LTNUMTAB  &lt_hp NUM TAB
+#define LTKRBRET  &lt_rpi KRB RETURN
 #define LTFUNSTS  &ltst_hp FUN LSHIFT
 #define STARSBL   &kp KP_MULTIPLY
 #define DESKLEFT  &kp LC(RG(LEFT))
@@ -131,33 +144,45 @@ ZMK_BEHAVIOR(ltst_hp, hold_tap,
 #define NEXT      &kp C_NEXT
 
 // Keymap layers:
-ZMK_LAYER(default_layer,
+ZMK_LAYER(colemak,
                 &kp Q     &kp W     &kp F     &kp P     &kp B       &kp J     &kp L     &kp U     &kp Y     &kp BSPC
                 &kp A     &kp R     &kp S     &kp T     &kp G       &kp M     &kp N     &kp E     &kp I     &kp O
                 HMLGUIZ   HMLALTX   HMLCTLC   HMLSFTD   &kp V       &kp K     HMRSFTH   HMRCTLCOM HMRALTDOT HMRGUISLH
-                                              LTNUMTAB  LTNAVSPAC   &kp RETURN LTFUNSTS
+                                              LTNUMTAB  LTNAVSPAC   LTKRBRET  LTFUNSTS
 )
-ZMK_LAYER(num_layer,
+ZMK_LAYER(numbers,
                 &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT   &kp CARET &kp AMPS  STARSBL   &kp LPAR  &kp RPAR
                 &kp N1    &kp N2    &kp N3    &kp N4    &kp N5      &kp N6    &kp N7    &kp N8    &kp N9    &kp N0
                 &trans    &trans    &trans    &kp N5    &kp PRCNT   &trans    &trans    &trans    &trans    &trans
-                                              &trans    &trans      &trans    &trans
+                                              &trans    &trans      &trans    &mo MED
 )
-ZMK_LAYER(fun_layer,
+ZMK_LAYER(functions,
                 &kp F1    &kp F2    &kp F3    &kp F4    &kp F5      &kp F6    &kp F7    &kp F8    &kp F9    &kp F10
                 &kp F11   &kp F12   &trans    &trans    &trans      &trans    &trans    &trans    &trans    &trans
                 BTSEL0    BTSEL1    BTSEL2    BTSEL3    BTSEL4      BTCLR     &trans    &trans    &trans    &trans
-                                              &trans    &trans      &trans    &trans
+                                              &mo MED    &trans      &trans    &trans
 )
-ZMK_LAYER(nav_layer,
+ZMK_LAYER(navigation,
                 &trans    &trans    &kp UP    &trans    &trans      &trans    &kp INS   &kp HOME  &kp PG_UP &trans
                 &trans    &kp LEFT  &kp DOWN  &kp RIGHT &trans      &trans    &kp DEL   &kp END   &kp PG_DN &trans
                 &trans    DESKLEFT  TASKVIEW  DESKRIGHT &trans      &trans    &trans    &trans    &trans    &trans
                                               &trans    &trans      &trans    &trans
 )
-ZMK_LAYER(media_layer,
+ZMK_LAYER(media,
                 &trans    &trans    &trans    &trans    &trans      &trans    &trans    &trans    &trans    &trans
                 &trans    &trans    &trans    &trans    &trans      &trans    PREVIOUS  &kp C_PP  NEXT      &trans
                 &trans    &trans    &trans    &trans    &trans      &trans    VOLUMDN   &trans    VOLUMUP   &trans
                                               &trans    &trans      &trans    &trans
+)
+ZMK_LAYER(komorebi,
+    &kp LA(Q) &kp LA(W) &kp LA(F) &kp LA(P) &kp LA(B)   &kp LA(J) &kp LA(L) &kp LA(U)     &kp LA(Y)   &kp LA(SEMI)
+    &kp LA(A) &kp LA(R) &kp LA(S) &kp LA(T) &kp LA(G)   &kp LA(M) &kp LA(N) &kp LA(E)     &kp LA(I)   &kp LA(O)
+    &kp LA(Z) &kp LA(X) &kp LA(C) &kp LA(D) &kp LA(V)   &kp LA(K) &kp LA(H) &kp LA(COMMA) &kp LA(DOT) &kp LA(FSLH)
+                                  &trans    &trans      &trans    &trans
+    )
+ZMK_LAYER(komorebi2,
+    &kp LS(LA(Q)) &kp LS(LA(W)) &kp LS(LA(F)) &kp LS(LA(P)) &kp LS(LA(B))   &kp LS(LA(J)) &kp LS(LA(L)) &kp LS(LA(U))     &kp LS(LA(Y))   &kp LS(LA(SEMI))
+    &kp LS(LA(A)) &kp LS(LA(R)) &kp LS(LA(S)) &kp LS(LA(T)) &kp LS(LA(G))   &kp LS(LA(M)) &kp LS(LA(N)) &kp LS(LA(E))     &kp LS(LA(I))   &kp LS(LA(O))
+    &kp LS(LA(Z)) &kp LS(LA(X)) &kp LS(LA(C)) &kp LS(LA(D)) &kp LS(LA(V))   &kp LS(LA(K)) &kp LS(LA(H)) &kp LS(LA(COMMA)) &kp LS(LA(DOT)) &kp LS(LA(FSLH))
+                                              &trans        &trans          &trans        &trans
 )
