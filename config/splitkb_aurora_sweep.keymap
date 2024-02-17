@@ -68,7 +68,7 @@ ZMK_COMBO(combo_dotdotsl, &dot_dot_slash, RB3 RB4, ALL, 20) // . /
 
 // Conditional Layers
 // ZMK_CONDITIONAL_LAYER(NUM FUN, MED)
-ZMK_CONDITIONAL_LAYER(DNV KRB, KR2)
+ZMK_CONDITIONAL_LAYER(NAV KRB, KRB2)
 
 // Macros:
 ZMK_BEHAVIOR(del_line, macro,
