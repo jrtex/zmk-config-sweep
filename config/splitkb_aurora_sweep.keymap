@@ -79,8 +79,7 @@ ZMK_BEHAVIOR(del_line, macro,
         , <&macro_tap &kp BSPC>;
 )
 ZMK_BEHAVIOR(dot_dot_slash, macro,
-    bindings = <&macro_tap &kp END>
-        = <&macro_tap &kp DOT>
+    bindings = <&macro_tap &kp DOT>
         , <&macro_tap &kp DOT>
         , <&macro_tap &kp FSLH>
         ;
