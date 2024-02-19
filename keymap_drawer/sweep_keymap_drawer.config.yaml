@@ -1,0 +1,56 @@
+layout:
+  qmk_keyboard: corne_rotated
+  qmk_layout: LAYOUT_split_3x5_3
+draw_config:
+  arc_radius: 12
+layers:
+  Base:
+    - [Q, W, F, P, B, J, L, U, Y, $$mdi:backspace-outline$$]
+    - [A, R, S, T, G, M, N, E, I, O]
+    - [{h: Gui, t: Z}, {h: Alt, t: X}, {h: Ctrl, t: C}, {h: Shift, t: D}, V, K, {h: Shift, t: H}, {h: Ctrl, t: ","}, {h: Alt, t: . }, {h: Gui, t: /}]
+    - {h: "", type: ghost}
+    - {h: NUM,   t: $$mdi:keyboard-tab$$}
+    - {h: DNAV,   t: $$mdi:keyboard-space$$}
+    - $$mdi:keyboard-return$$
+    - {h: "FUN", t: "Stick Shift"}
+    - {h: "", type: ghost}
+  Numbers (NUM):
+    - ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"]
+    - [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+    - ["", "", "", "", "", "", "", "", "", ""]
+    - {h: "", type: ghost}
+    - {type: "held"}
+    - ""
+    - ""
+    - "MED"
+    - {h: "", type: ghost}
+  Functions (FUN):
+    - ["F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10"]
+    - ["F11", "F12", "", "", "", "", "", "", "", ""]
+    - ["BT 1", "BT 2", "BT 3", "BT 4", "BT 5", "BT Clear", "", "", "", ""]
+    - {h: "", type: ghost}
+    - "MED"
+    - ""
+    - ""
+    - {type: "held"}
+    - {h: "", type: ghost}
+  Media (MED):
+    - ["", "", "", "", "", "", "", "", "", ""]
+    - ["", "", "", "", "", "", "Prev", "Play", "Next", ""]
+    - ["", "", "", "", "", "", "Vol Down", "", "Vol Up", ""]
+    - {h: "", type: ghost}
+    - {type: "held"}
+    - ""
+    - ""
+    - {type: "held"}
+    - {h: "", type: ghost}
+  Navigation (NAV):
+    - ["", "Word Left", "Up", "Word Rgt", "", "", "Insert", "Home", "Page Up", ""]
+    - ["", "Left", "Down", "Right", "", "", "Delete", "End", "Page Down", ""]
+    - ["", "Desk Left", "Task View", "Desk Right", "", "", "", "", "", ""]
+    - {h: "", type: ghost}
+    - ""
+    - {type: "held"}
+    - ""
+    - ""
+    - {h: "", type: ghost}

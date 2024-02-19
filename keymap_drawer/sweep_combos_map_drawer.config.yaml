@@ -1,0 +1,60 @@
+layout:
+  qmk_keyboard: corne_rotated
+  qmk_layout: LAYOUT_split_3x5_3
+draw_config:
+  arc_radius: 12
+  # separate_combo_diagrams: true
+layers:
+  Combo:
+    - ["", "", "", "", "", "", "", "", "", ""]
+    - ["", "", "", "", "", "", "", "", "", ""]
+    - ["", "", "", "", "", "", "", "", "", ""]
+    - ""
+    - ""
+    - ""
+    - ""
+    - ""
+    - ""
+  Additional Combos:
+    - ["", "", "", "", "", "", "", "", "", ""]
+    - ["", "", "", "", "", "", "", "", "", ""]
+    - ["", "", "", "", "", "", "", "", "", ""]
+    - ""
+    - ""
+    - ""
+    - ""
+    - ""
+    - ""
+combos:
+  - {p: [0, 1], k: "Ctrl-W", l: ["Combo"], w: 40}
+  - {p: [1, 2], k: "Esc", l: ["Combo"]}
+  - {p: [2, 3], k: "Tab", l: ["Combo"]}
+  - {p: [0, 1, 2, 3], k: "Ctrl Alt Delete", l: ["Additional Combos"], a: top, o: 0.2, arc_scale: 1.2, slide: -0.25, w: 50, h: 45}
+  - {p: [10, 11], k: "Ctrl-A", l: ["Combo"], w: 40}
+  - {p: [11, 12], k: "Bspace", l: ["Combo"], w: 40}
+  - {p: [12, 13], k: "Delete", l: ["Combo"], w: 40}
+  - {p: [11, 12, 13], k: "Del Word", l: ["Additional Combos"], a: top, o: 0, arc_scale: 1.2, slide: -0.25, w: 35, h: 32}
+  - {p: [10, 11, 12, 13], k: "Del Line", l: ["Additional Combos"], a: top, o: 0.3, arc_scale: 1.2, slide: -0.6, w: 35, h: 32}
+  - {p: [20, 21], k: "Ctrl-Z", l: ["Combo"], w: 40}
+  - {p: [21, 22], k: "Ctrl-C", l: ["Combo"], w: 40}
+  - {p: [22, 23], k: "Ctrl-V", l: ["Combo"], w: 40}
+  - {p: [21, 22, 23], k: "Ctrl-X", l: ["Additional Combos"], a: top, o: 0, w: 40}
+  - {p: [23, 26], k: "Caps Word", l: ["Additional Combos"], a: top, o: 0.15, arc_scale: 0.95, w: 35, h: 32}
+  - {p: [5, 6],   k: "~", l: ["Combo"]}
+  - {p: [6, 7],   k: "!", l: ["Combo"]}
+  - {p: [7, 8], k: "?", l: ["Combo"]}
+  - {p: [8, 9], k: "`", l: ["Combo"]}
+  - {p: [6, 7, 8], k: "+", l: ["Combo"], a: top, o: 0, arc_scale: 1, slide: -0.5}
+  - {p: [6, 8], k: ";" , l: ["Combo"], a: top, o: 0.4, arc_scale: 1.1, slide: 0.25}
+  - {p: [15, 16], k: "_", l: ["Combo"]}
+  - {p: [16, 17], k: "-", l: ["Combo"]}
+  - {p: [17, 18], k: "'", l: ["Combo"]}
+  - {p: [18, 19], k: "\"", l: ["Combo"]}
+  - {p: [16, 17, 18], k: "=", l: ["Combo"], a: bottom, o: 0, arc_scale: 1, slide: -0.5}
+  - {p: [16, 18], k: ":", l: ["Combo"], a: bottom, o: 0.4, arc_scale: 1.1, slide: 0.25}
+  - {p: [28, 29], k: "../", l: ["Combo"]}
+  - {p: [7, 16], k: "/", l: ["Additional Combos"], d: true}
+  - {p: [7, 18], k: "\\", l: ["Additional Combos"], d: true}
+  - {p: [17, 26], k: "[ {", l: ["Additional Combos"], d: true}
+  - {p: [17, 28], k: "] }", l: ["Additional Combos"], d: true}
+  - {p: [5, 15], k: "|", l: ["Combo"], a: left}
