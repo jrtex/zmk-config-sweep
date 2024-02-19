@@ -152,7 +152,7 @@ ZMK_LAYER(colemak,
 ZMK_LAYER(numbers,
                 &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT   &kp CARET &kp AMPS  STARSBL   &kp LPAR  &kp RPAR
                 &kp N1    &kp N2    &kp N3    &kp N4    &kp N5      &kp N6    &kp N7    &kp N8    &kp N9    &kp N0
-                &trans    &trans    &trans    &kp N5    &kp PRCNT   &trans    &trans    &trans    &trans    &trans
+                &trans    &trans    &trans    &kp N5    &kp PRCNT   &trans    &kp BSPC  &trans    &trans    &trans
                                               &trans    &trans      &trans    &mo MED
 )
 ZMK_LAYER(functions,
