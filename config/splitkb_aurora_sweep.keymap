@@ -104,13 +104,13 @@ ZMK_BEHAVIOR(lt_rpi, hold_tap,
     flavor = "tap-preferred";
     bindings = <&mo>, <&kp>;
 )
-ZKM_BEHAVIOR(lt_bal, hold_tap,
+ZMK_BEHAVIOR(lt_bal, hold_tap,
     tapping-term-ms = <200>;
     quick-tap-ms = <0>;
     flavor = "balanced";
     bindings = <&mo>, <&kp>;
 )
-ZKM_BEHAVIOR(skq, sticky_key,
+ZMK_BEHAVIOR(skq, sticky_key,
     quick-release;
 )
 ZMK_BEHAVIOR(ltst_hp, hold_tap,
