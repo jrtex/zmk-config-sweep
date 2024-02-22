@@ -112,6 +112,7 @@ ZMK_BEHAVIOR(lt_bal, hold_tap,
 )
 ZMK_BEHAVIOR(skq, sticky_key,
     quick-release;
+    bindings = <&kp>;
 )
 ZMK_BEHAVIOR(ltst_hp, hold_tap,
     tapping-term-ms = <200>;
