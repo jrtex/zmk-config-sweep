@@ -112,6 +112,7 @@ ZMK_BEHAVIOR(lt_bal, hold_tap,
 )
 ZMK_BEHAVIOR(skq, sticky_key,
     quick-release;
+    release-after-ms = <1000>;
     bindings = <&kp>;
 )
 ZMK_BEHAVIOR(ltst_hp, hold_tap,
