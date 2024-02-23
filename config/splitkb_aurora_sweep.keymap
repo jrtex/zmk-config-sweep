@@ -18,8 +18,6 @@
 #define KRB 5
 #define KRB2 6
 
-// All Characters defined in combos.dtsi
-#include "combos.dtsi"
 
 // Conditional Layers
 // ZMK_CONDITIONAL_LAYER(NUM FUN, MED)
@@ -76,6 +74,10 @@ ZMK_BEHAVIOR(ltst_hp, hold_tap,
     flavor = "hold-preferred";
     bindings = <&mo>, <&skq>;
 )
+
+
+// All Characters defined in combos.dtsi
+#include "combos.dtsi"
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
