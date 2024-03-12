@@ -86,7 +86,7 @@ ZMK_BEHAVIOR(dot_dot_slash, macro,
 )
 
 // ModMorphs:
-ZMK_BEHAVIOR(slashes, mod_morph
+ZMK_BEHAVIOR(slashes, mod_morph,
     bindings = <&kp FSLH>, <&kp BSLH>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
