@@ -86,12 +86,6 @@ ZMK_BEHAVIOR(dot_dot_slash, macro,
         ;
 )
 
-// ModMorphs:
-ZMK_BEHAVIOR(slashes, mod_morph,
-    bindings = <&kp FSLH>, <&kp BSLH>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
-
 // Hold-tap behaviors
 ZMK_BEHAVIOR(hm, hold_tap,
     tapping_term_ms = <200>;
@@ -128,6 +122,13 @@ ZMK_BEHAVIOR(ltst_hp, hold_tap,
     flavor = "hold-preferred";
     bindings = <&mo>, <&skq>;
 )
+
+// ModMorphs:
+ZMK_BEHAVIOR(slashes, mod_morph,
+    bindings = <&hm RGUI FSLH>, <&kp BSLH>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+)
+
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
@@ -166,7 +167,7 @@ ZMK_BEHAVIOR(ltst_hp, hold_tap,
 ZMK_LAYER(colemak,
                 &kp Q     &kp W     &kp F     &kp P     &kp B       &kp J     &kp L     &kp U     &kp Y     &kp BSPC
                 &kp A     &kp R     &kp S     &kp T     &kp G       &kp M     &kp N     &kp E     &kp I     &kp O
-                HMLGUIZ   HMLALTX   HMLCTLC   HMLSFTD   &kp V       &kp K     HMRSFTH   HMRCTLCOM HMRALTDOT HMRGUISLH
+                HMLGUIZ   HMLALTX   HMLCTLC   HMLSFTD   &kp V       &kp K     HMRSFTH   HMRCTLCOM HMRALTDOT &slashes
                                               LTNUMTAB  LTNAVSPAC   LTKRBRET  LTFUNSTS
 )
 ZMK_LAYER(numbers,
