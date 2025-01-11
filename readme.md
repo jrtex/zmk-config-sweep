@@ -4,6 +4,7 @@ This is my personal keymap's ZMK configuaration. It is designed for 34-key split
 
 This layout has evolved from a 60% keyboard, originally using QMK, to progressively smaller boards by taking advantages of the many features made available in custom keyboard firmware, in particular combos and numerous thumb-activated layers.
 
+
 ## Highlights
 
 - Colemak-DH alpha base
