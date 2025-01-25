@@ -17,116 +17,6 @@
 #define KRB2 6
 
 
-// Two-hand combos:
-ZMK_COMBO(combo_hrcaps, &caps_word, LB1 RB1, ALL) // D H
-
-// Left-hand combos:
-ZMK_COMBO(combo_close,  &kp LC(W), LT4 LT3, ALL, 20) // Q W
-ZMK_COMBO(combo_esc,    &kp ESC,   LT3 LT2, ALL, 20) // W F
-ZMK_COMBO(combo_tab,    &kp TAB,   LT2 LT1, ALL, 20) // F P
-ZMK_COMBO(combo_ctlaltdel, &kp LC(LA(DEL)), LT4 LT3 LT2 LT1, ALL, 20) // Q W F P
-
-ZMK_COMBO(combo_all,    &kp LC(A), LM4 LM3, ALL, 20) // A R
-ZMK_COMBO(combo_bspace, &kp BSPC,  LM3 LM2, ALL, 20) // R S
-ZMK_COMBO(combo_del,    &kp DEL,   LM2 LM1, ALL, 20) // S T
-ZMK_COMBO(combo_delw,   &kp LC(BSPC), LM3 LM2 LM1, ALL, 20) // R S T
-ZMK_COMBO(combo_delln,  &del_line, LM4 LM3 LM2 LM1, ALL, 20) // A R S T
-// ZMK_COMBO(combo_newln,  &mm_newline, LM1 LM0, ALL, 20) // T G
-
-ZMK_COMBO(combo_undo,   &kp LC(Z), LB4 LB3, ALL, 20) // Z X
-ZMK_COMBO(combo_copy,   &kp LC(C), LB3 LB2, ALL, 20) // X C
-ZMK_COMBO(combo_paste,  &kp LC(V), LB2 LB1, ALL, 20) // C D
-ZMK_COMBO(combo_cut,    &kp LC(X), LB3 LB2 LB1, ALL, 20) // X C D
-// ZMK_COMBO(combo_selln,  &select_line, LB1 LB0, ALL, 20) // D V
-
-ZMK_COMBO(combo_enter, &kp ENTER, LB3 LM2, ALL, 20) // X S
-ZMK_COMBO(combo_kapp,  &kp K_APP, LM2 LB1, ALL, 20) // S D
-
-// Right-hand combos:
-ZMK_COMBO(combo_tilde,  &kp TILDE, RT0 RT1, ALL, 20) // J L
-ZMK_COMBO(combo_excl,   &kp EXCL,  RT1 RT2, ALL, 20) // L U
-ZMK_COMBO(combo_qmrk,   &kp QMARK, RT2 RT3, ALL, 20) // U Y
-ZMK_COMBO(combo_smcln,  &kp SEMI,  RT1 RT3, ALL, 20) // L Y
-ZMK_COMBO(combo_plus,   &kp PLUS,  RT1 RT2 RT3, ALL, 20) // L U Y
-ZMK_COMBO(combo_bqt,    &kp GRAVE, RT3 RT4, ALL, 20) // Y ;
-
-ZMK_COMBO(combo_undscr, &kp UNDER, RM0 RM1, ALL, 20) // M N
-ZMK_COMBO(combo_dash,   &kp MINUS, RM1 RM2, ALL, 20) // N E
-ZMK_COMBO(combo_sqt,    &kp SQT,   RM2 RM3, ALL, 20) // E I
-ZMK_COMBO(combo_dqt,    &kp DQT,   RM3 RM4, ALL, 20) // I O
-ZMK_COMBO(combo_equal,  &kp EQUAL, RM1 RM2 RM3, ALL, 20) // N E I
-ZMK_COMBO(combo_colon,  &kp COLON, RM1 RM3, ALL, 20) // N I
-
-ZMK_COMBO(combo_pipe,   &kp PIPE,  RT0 RM0, ALL, 20) // M J
-ZMK_COMBO(combo_lbrace, &kp LBRC,  RM1 RT2, ALL, 20) // N U
-ZMK_COMBO(combo_rbrace, &kp RBRC,  RT2 RM3, ALL, 20) // U I
-ZMK_COMBO(combo_lbkt,   &kp LBKT,  RB1 RM2, ALL, 20) // H E
-ZMK_COMBO(combo_rbkt,   &kp RBKT,  RM2 RB3, ALL, 20) // E >
-
-ZMK_COMBO(combo_dotdotsl, &dot_dot_slash, RB3 RB4, ALL, 20) // . /
-
-// Conditional Layers
-// ZMK_CONDITIONAL_LAYER(NUM FUN, MED)
-ZMK_CONDITIONAL_LAYER(NAV KRB, KRB2)
-
-// Macros:
-ZMK_BEHAVIOR(del_line, macro,
-    bindings = <&macro_tap &kp END>
-        , <&macro_tap &kp LS(HOME)>
-        , <&macro_tap &kp LS(HOME)>
-        , <&macro_tap &kp BSPC>
-        , <&macro_tap &kp BSPC>;
-)
-ZMK_BEHAVIOR(dot_dot_slash, macro,
-    bindings = <&macro_tap &kp DOT>
-        , <&macro_tap &kp DOT>
-        , <&macro_tap &kp FSLH>
-        ;
-)
-
-// Hold-tap behaviors
-ZMK_BEHAVIOR(hm, hold_tap,
-    tapping_term_ms = <200>;
-    flavor = "tap-preferred";
-    bindings = <&kp>, <&kp>;
-)
-ZMK_BEHAVIOR(lt_hp, hold_tap,
-    tapping-term-ms = <200>;
-    quick-tap-ms = <0>;
-    flavor = "hold-preferred";
-    bindings = <&mo>, <&kp>;
-)
-ZMK_BEHAVIOR(lt_rpi, hold_tap,
-    tapping-term-ms = <200>;
-    quick-tap-ms = <0>;
-    require-prior-idle-ms = <200>;
-    flavor = "tap-preferred";
-    bindings = <&mo>, <&kp>;
-)
-ZMK_BEHAVIOR(lt_bal, hold_tap,
-    tapping-term-ms = <200>;
-    quick-tap-ms = <0>;
-    flavor = "balanced";
-    bindings = <&mo>, <&kp>;
-)
-ZMK_BEHAVIOR(skq, sticky_key,
-    quick-release;
-    release-after-ms = <1000>;
-    bindings = <&kp>;
-)
-ZMK_BEHAVIOR(ltst_hp, hold_tap,
-    tapping-term-ms = <200>;
-    quick-tap-ms = <0>;
-    flavor = "hold-preferred";
-    bindings = <&mo>, <&skq>;
-)
-
-// ModMorphs:
-ZMK_BEHAVIOR(slashes, mod_morph,
-    bindings = <&hm RGUI FSLH>, <&kp BSLH>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
-
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
@@ -161,46 +51,14 @@ ZMK_BEHAVIOR(slashes, mod_morph,
 #define PREVIOUS  &kp C_PREV
 #define NEXT      &kp C_NEXT
 
-// Keymap layers:
-ZMK_LAYER(colemak,
+keymap {
+  compatible = "zmk,keymap";
+  default_layer {
+    bindings = <
                 &kp Q     &kp W     &kp F     &kp P     &kp B       &kp J     &kp L     &kp U     &kp Y     &kp BSPC
                 &kp A     &kp R     &kp S     &kp T     &kp G       &kp M     &kp N     &kp E     &kp I     &kp O
-                HMLGUIZ   HMLALTX   HMLCTLC   HMLSFTD   &kp V       &kp K     HMRSFTH   HMRCTLCOM HMRALTDOT &slashes
-                                              LTNUMTAB  LTNAVSPAC   LTKRBRET  LTFUNSTS
-)
-ZMK_LAYER(numbers,
-                &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT   &kp CARET &kp AMPS  STARSBL   &kp LPAR  &kp RPAR
-                &kp N1    &kp N2    &kp N3    &kp N4    &kp N5      &kp N6    &kp N7    &kp N8    &kp N9    &kp N0
-                &trans    &trans    &trans    &kp N5    &kp PRCNT   &trans    &kp BSPC  &trans    &trans    &trans
-                                              &trans    &trans      &trans    &mo MED
-)
-ZMK_LAYER(functions,
-                &kp F1    &kp F2    &kp F3    &kp F4    &kp F5      &kp F6    &kp F7    &kp F8    &kp F9    &kp F10
-                &kp F11   &kp F12   &trans    &trans    &trans      &trans    &trans    &trans    &trans    &trans
-                BTSEL0    BTSEL1    BTSEL2    BTSEL3    BTSEL4      BTCLR     &trans    &trans    &trans    &trans
-                                              &mo MED    &trans      &trans    &trans
-)
-ZMK_LAYER(navigation,
-                &trans    WORDPREV  &kp UP    WORDNEXT  &trans      &trans    &kp INS   &kp HOME  &kp PG_UP &trans
-                &trans    &kp LEFT  &kp DOWN  &kp RIGHT &trans      &trans    &kp DEL   &kp END   &kp PG_DN &trans
-                &trans    DESKLEFT  TASKVIEW  DESKRIGHT &trans      &trans    &trans    &trans    &trans    &trans
-                                              &trans    &trans      &trans    &trans
-)
-ZMK_LAYER(media,
-                &trans    &trans    &trans    &trans    &trans      &trans    &trans    &trans    &trans    &trans
-                &trans    &trans    &trans    &trans    &trans      &trans    PREVIOUS  &kp C_PP  NEXT      &trans
-                &trans    &trans    &trans    &trans    &trans      &trans    VOLUMDN   &trans    VOLUMUP   &trans
-                                              &trans    &trans      &trans    &trans
-)
-ZMK_LAYER(komorebi,
-    &kp LA(Q) &kp LA(W) &kp LA(F) &kp LA(P) &kp LA(B)   &kp LA(J) &kp LA(L) &kp LA(U)     &kp LA(Y)   &kp LA(SEMI)
-    &kp LA(A) &kp LA(R) &kp LA(S) &kp LA(T) &kp LA(G)   &kp LA(M) &kp LA(N) &kp LA(E)     &kp LA(I)   &kp LA(O)
-    &kp LA(Z) &kp LA(X) &kp LA(C) &kp LA(D) &kp LA(V)   &kp LA(K) &kp LA(H) &kp LA(COMMA) &kp LA(DOT) &kp LA(FSLH)
-                                  &trans    &trans      &trans    &trans
-    )
-ZMK_LAYER(komorebi2,
-    &kp LS(LA(Q)) &kp LS(LA(W)) &kp LS(LA(F)) &kp LS(LA(P)) &kp LS(LA(B))   &kp LS(LA(J)) &kp LS(LA(L)) &kp LS(LA(U))     &kp LS(LA(Y))   &kp LS(LA(SEMI))
-    &kp LS(LA(A)) &kp LS(LA(R)) &kp LS(LA(S)) &kp LS(LA(T)) &kp LS(LA(G))   &kp LS(LA(M)) &kp LS(LA(N)) &kp LS(LA(E))     &kp LS(LA(I))   &kp LS(LA(O))
-    &kp LS(LA(Z)) &kp LS(LA(X)) &kp LS(LA(C)) &kp LS(LA(D)) &kp LS(LA(V))   &kp LS(LA(K)) &kp LS(LA(H)) &kp LS(LA(COMMA)) &kp LS(LA(DOT)) &kp LS(LA(FSLH))
-                                              &trans        &trans          &trans        &trans
-)
+                &kp Z     &kp X     &kp C     &kp D     &kp V       &kp K     &kp H     &kp COMMA &kp DOT   &kp FSLH
+                                              &kp TAB   &kp SPACE   &kp RETURN &kp BT_CLR
+                                              >;
+  };
+};
