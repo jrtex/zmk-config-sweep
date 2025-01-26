@@ -21,44 +21,16 @@
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
 
-// Max 9 characters per key
-#define HMLGUIZ   &hm LGUI Z
-#define HMLALTX   &hm LALT X
-#define HMLCTLC   &hm LCTRL C
-#define HMLSFTD   &hm LSHFT D
-#define HMRSFTH   &hm RSHFT H
-#define HMRCTLCOM &hm RCTRL COMMA
-#define HMRALTDOT &hm RALT DOT
-#define HMRGUISLH &hm RGUI &slashes
-#define LTNAVSPAC &lt_bal NAV SPACE
-#define LTNUMTAB  &lt_hp NUM TAB
-#define LTKRBRET  &lt_rpi KRB RETURN
-#define LTFUNSTS  &ltst_hp FUN LSHIFT
-#define STARSBL   &kp KP_MULTIPLY
-#define WORDPREV  &kp LC(LEFT)
-#define WORDNEXT  &kp LC(RIGHT)
-#define DESKLEFT  &kp LC(RG(LEFT))
-#define DESKRIGHT &kp LC(RG(RIGHT))
-#define TASKVIEW  &kp LG(TAB)
-#define BTCLR     &bt BT_CLR
-#define BTSEL0    &bt BT_SEL 0
-#define BTSEL1    &bt BT_SEL 1
-#define BTSEL2    &bt BT_SEL 2
-#define BTSEL3    &bt BT_SEL 3
-#define BTSEL4    &bt BT_SEL 4
-#define VOLUMUP   &kp C_VOL_UP
-#define VOLUMDN   &kp C_VOL_DN
-#define PREVIOUS  &kp C_PREV
-#define NEXT      &kp C_NEXT
-
-keymap {
-  compatible = "zmk,keymap";
-  default_layer {
-    bindings = <
+/ {
+  keymap {
+    compatible = "zmk,keymap";
+    default_layer {
+      bindings = <
                 &kp Q     &kp W     &kp F     &kp P     &kp B       &kp J     &kp L     &kp U     &kp Y     &kp BSPC
                 &kp A     &kp R     &kp S     &kp T     &kp G       &kp M     &kp N     &kp E     &kp I     &kp O
                 &kp Z     &kp X     &kp C     &kp D     &kp V       &kp K     &kp H     &kp COMMA &kp DOT   &kp FSLH
                                               &kp TAB   &kp SPACE   &kp RETURN &kp BT_CLR
                                               >;
+    };
   };
 };
