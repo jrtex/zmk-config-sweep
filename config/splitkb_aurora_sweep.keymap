@@ -9,12 +9,6 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define DEF 0
-#define NUM 1
-#define FUN 2
-#define NAV 3
-#define MED 4
-#define KRB 5
-#define KRB2 6
 
 
 
