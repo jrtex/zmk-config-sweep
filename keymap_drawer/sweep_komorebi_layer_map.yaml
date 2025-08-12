@@ -1,0 +1,26 @@
+layout:
+  qmk_keyboard: corne_rotated
+  qmk_layout: LAYOUT_split_3x5_3
+draw_config:
+  arc_radius: 12
+layers:
+  Komorebi1:
+    - ["", "", "Full Screen", "Toggle Float", "", "Focus WS5", "Focus WS1", "Focus WS2", "Focus WS3", "Focus WS4"]
+    - ["Focus Left", "Focus Down", "Focus Up", "Focus Right", "", "", "Move Left", "Move Down", "Move Up", "Move Right"]
+    - ["", "", "Unstack", "Stack Cycle Next", "", "", "Stack Left", "Stack Down", "Stack Up", "Stack Right"]
+    - {h: "", type: ghost}
+    - ""
+    - ""
+    - {type: "held"}
+    - ""
+    - {h: "", type: ghost}
+  Komorebi2 (FUN):
+    - ["", "", "Toggle Window Offset", "Toggle Float/Tile", "", "Sendto WS5", "Sendto WS1", "Sendto WS2", "Sendto WS3", "Sendto WS4"]
+    - ["", "", "", "", "", "", "", "", "", ""]
+    - ["", "", "", "", "", "", "", "", "", ""]
+    - {h: "", type: ghost}
+    - ""
+    - {type: "held"}
+    - {type: "held"}
+    - ""
+    - {h: "", type: ghost}
